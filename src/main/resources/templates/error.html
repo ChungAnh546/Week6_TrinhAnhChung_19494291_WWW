@@ -9,7 +9,11 @@
 
 <div class="container">
 
-    <div th:replace="/fragments/posts :: posts(posts=${posts})"></div>
+
+    <div class="list-group">
+        <div class="alert-red"><h3 th:text="${error}">Status</h3></div>
+        <div class="alert-red" th:text="'Status code: '+ ${status}"></div>
+    </div>
 
 </div>
 

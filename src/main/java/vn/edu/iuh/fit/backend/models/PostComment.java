@@ -52,4 +52,83 @@ public class PostComment {
     @OneToMany(mappedBy = "parent")
     private Set<PostComment> postComments = new LinkedHashSet<>();
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        id = id;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
+
+    public Set<PostComment> getPostComments() {
+        return postComments;
+    }
+
+    public void setPostComments(Set<PostComment> postComments) {
+        this.postComments = postComments;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Boolean getPublished() {
+        return published;
+    }
+
+    public void setPublished(Boolean published) {
+        this.published = published;
+    }
+
+    public Instant getPublishedAt() {
+        return publishedAt;
+    }
+
+    public void setPublishedAt(Instant publishedAt) {
+        this.publishedAt = publishedAt;
+    }
+
+    public Instant getCreatedAt() {
+        return createAt;
+    }
+
+    public void setCreatedAt(Instant createdAt) {
+        this.createAt = createdAt;
+    }
+
+    public PostComment getParentComment() {
+        return parent;
+    }
+
+    public void setParentComment(PostComment parentComment) {
+        this.parent = parentComment;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
