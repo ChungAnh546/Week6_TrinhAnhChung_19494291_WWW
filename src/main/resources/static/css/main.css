@@ -2,7 +2,7 @@
 
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #333;
+    background-color: #111111;
     overflow: hidden;
 }
 
@@ -18,14 +18,14 @@
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    background-color: #ddd;
+    background-color: #f2f2f2;
     color: black;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-    background-color: #4CAF50;
-    color: white;
+    background-color:#f2f2f2 ;
+    color: black;
     float: left;
 }
 
@@ -36,7 +36,7 @@
 body {
     font-family: Arial;
     padding: 0;
-    background: #f1f1f1;
+    background:#F8F8FF;
     width: 80%;
     margin: auto;
 
@@ -60,16 +60,7 @@ body {
 }
 
 /* Fake image */
-.img {
-    float: left;
-    background-color: #aaa;
-    align-content: start;
-    width: 20%;
-    padding: 20px;
-    margin: 0 20px 20px 0;
 
-    height: 200px;
-}
 
 .post {
     background-color: white;
@@ -102,7 +93,6 @@ body {
     position: relative;
     background-color: white;
     padding: 10px 20px;
-    /*margin-top: 10px;*/
     text-align: justify;
     width: 80%;
     margin: 5px auto;
@@ -114,41 +104,41 @@ form {
 }
 
 
-/* Footer */
+
 footer {
     padding: 20px;
     text-align: center;
-    background: #ddd;
+    background: #DDDDDD;
     margin-top: 20px;
 }
 
 .alert-red {
     padding: 20px;
-    background-color: #f44336; /* Red */
+    background-color: #DD0000; /* Red */
     color: white;
     margin: 15px auto;
     width: 80%;
 }
 .alert-green {
     padding: 20px;
-    background-color: green;
+    background-color: #FFFF33;
     color: white;
     margin: 15px auto;
     width: 80%;
 }
 
 a {
-    color: #336655;
+    color: #99FFCC;
     text-decoration: none;
 }
 
 a:hover {
-    color: #336655;
+    color: #66FF66;
     text-decoration: underline;
 }
 
 .green-btn {
-    background-color: #4CAF50; /* Green */
+    background-color: #33FFFF; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -160,15 +150,17 @@ a:hover {
 }
 
 .green-btn:hover {
-    background-color: #555555;
+    background-color: #66FFFF;
 }
 
 .red-btn {
-    background-color: #f44336;
+    background-color: #BB0000;
 }
-
+.red-btn :hover{
+    background-color: #880000;
+}
 .blue-btn {
-    background-color: #008CBA;
+    background-color:#33FFFF;
 }
 
 input, select {
@@ -176,7 +168,7 @@ input, select {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid ;
     border-radius: 4px;
     box-sizing: border-box;
 }

@@ -10,10 +10,10 @@
 
     <div class="posts_wrapper">
         <div class="post" th:each="post : ${posts}">
+            <h4 th:text=" 'Creater: ' + ${post.author.firstName}"></h4>
             <h2><a th:href="@{'/post/' + ${post.id}}" th:text="${post.title}">Title</a></h2>
-            <h5 th:text="'Published on ' + ${#dates.format(post.createAt, 'yyyy MMMM dd')} + ' by ' + ${post.author.firstName}">Creation date and by whom</h5>
-
             <p th:text="${post.sumary}">body text</p>
+            <h5 th:text="'' + ${#dates.format(post.createAt, 'yyyy MMMM dd')} "></h5>
             <br>
         </div>
     </div>

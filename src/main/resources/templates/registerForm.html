@@ -39,17 +39,16 @@
                 <input type="password" id="Repassword" name="Repassword" placeholder="Repeat Password"/>
             </label>
         </div>
-        <div>
+        <div >
             <button class="green-btn" type="submit">Register</button>
         </div>
     </form>
 </div>
 
-<footer th:replace="/fragments/footer :: footer"></footer>
+
 
 <script>
     function validateForm() {
-        // Get values from form fields
         var username = document.getElementById('username').value;
         var mobile = document.getElementById('mobile').value;
         var email = document.getElementById('email').value;

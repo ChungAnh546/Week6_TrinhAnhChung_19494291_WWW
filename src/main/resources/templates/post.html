@@ -9,22 +9,17 @@
 
 <div class="container">
     <div class="post">
-        <h2 th:text="${post.title}">Title</h2>
-        <h5 th:text="'Published on ' + ${#dates.format(post.createAt, 'yyyy MMMM dd')} + ' by ' + ${post.author.firstName}">Creation date and by whom</h5>
-        <p th:text="${post.content}">body text</p>
+        <h4 th:text=" 'Creater: ' + ${post.author.firstName}"></h4>
+        <h2><a th:href="@{'/post/' + ${post.id}}" th:text="${post.title}">Title</a></h2>
+        <p th:text="${post.sumary}">body text</p>
+        <h5 th:text="'' + ${#dates.format(post.createAt, 'yyyy MMMM dd')} "></h5>
         <div class="align-right" th:if="${isOwner}">
             <a th:href="@{'/editPost/{id}'(id=${post.id})}">
                 <button class="green-btn blue-btn" type="button">Edit</button>
             </a>
         </div>
     </div>
-<!--    <div class="comments">-->
-<!--        <h2>Comments</h2>-->
-<!--        <div class="comment" th:each="comment : ${post.comments}">-->
-<!--            <h5 th:text="'Commented on ' + ${#dates.format(post.creationDate, 'yyyy-MM-dd')} + ' by ' + ${comment.user.username}">Comment date and by whom</h5>-->
-<!--            <p th:text="${comment.body}">Body</p>-->
-<!--        </div>-->
-<!--    </div>-->
+
     <div class="align-center">
         <a th:href="@{'/comment/{id}'(id=${post.id})}">
             <button class="green-btn" type="button">Comment Post</button>
@@ -32,7 +27,7 @@
     </div>
 </div>
 
-<footer th:replace="/fragments/footer :: footer"></footer>
+
 
 </body>
 </html>

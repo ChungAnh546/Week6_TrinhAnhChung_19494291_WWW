@@ -8,11 +8,12 @@
 <div th:replace="/fragments/header :: header"></div>
 
 <div class="container">
+    <h2 align="center">New post</h2>
     <form action="#"
           th:action="@{'/createNewPost'}"
           th:object="${post}"
           method="post">
-        <h2>Write new blog post</h2>
+
         <div>
             <label>
                 <div class="alert-red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</div>
@@ -31,17 +32,12 @@
                 <textarea th:field="*{content}" placeholder="Write something valuable"></textarea>
             </label>
         </div>
-        <div>
-            <label>
-                isPublished
-                <input type="checkbox" th:field="*{published}" placeholder="Summary"/>
-            </label>
-        </div>
-        <div class="float-left">
+
+        <div class="float-left" align="center" style="padding-bottom: 150px">
             <button class="green-btn" type="submit">Send</button>
         </div>
     </form>
-    <div class="float-right" th:if="${post.id}">
+    <div th:if="${post.id}" style="padding-left: 50px">
         <a th:href="@{'/deletePost/{id}'(id=${post.id})}">
             <button class="green-btn red-btn" type="button">Delete Post</button>
         </a>
@@ -49,7 +45,7 @@
 </div>
 
 
-<footer th:replace="/fragments/footer :: footer"></footer>
+
 
 </body>
 </html>
