@@ -19,18 +19,18 @@ public class PostComment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "postId", nullable = false)
     private Post post;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "parentId")
     private PostComment parent;
 
     @Column(name = "title", nullable = false, length = 100)
     private String title;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "userId", nullable = false)
     private User user;
 
@@ -52,7 +52,7 @@ public class PostComment {
     @OneToMany(mappedBy = "parent")
     private Set<PostComment> postComments = new LinkedHashSet<>();
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

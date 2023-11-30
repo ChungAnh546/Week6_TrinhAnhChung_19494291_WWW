@@ -53,7 +53,7 @@ public class User {
     @Column(name = "profile")
     private String profile;
 
-    @OneToMany(mappedBy = "author")
+    @OneToMany(mappedBy = "author", fetch = FetchType.EAGER)
     private Set<Post> posts = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "user")

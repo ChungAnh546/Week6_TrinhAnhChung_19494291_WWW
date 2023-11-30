@@ -38,19 +38,18 @@ public class CommentController {
         }
 
 
-        // find post by id
+
         Optional<Post> postOptional = this.postService.getPostById(id);
-        // if both optionals is present set user and post to a new comment and put former in the model
         if (postOptional.isPresent() && principal!= null) {
             PostComment comment = new PostComment();
             comment.setPost(postOptional.get());
             comment.setUser(principal);
             model.addAttribute("comment", comment);
             session.setAttribute("comment", comment);
-            System.err.println("GET comment/{id}: " + comment + "/" + id); // for testing debugging purposes
+            System.err.println("GET comment/{id}: " + comment + "/" + id);
             return "commentForm";
         } else {
-            System.err.println("Could not find a post by id: " + id + " or user by logged in username: " + authUsername); // for testing debugging purposes
+            System.err.println("Could not find a post by id: " + id + " or user by logged in username: " + authUsername);
             return "error";
         }
     }
@@ -58,19 +57,20 @@ public class CommentController {
 
     @PostMapping("/comment")
     public String validateComment(@ModelAttribute PostComment comment, BindingResult bindingResult, SessionStatus sessionStatus, HttpSession session) {
-        System.err.println("POST comment: " + comment); // for testing debugging purposes
+        System.err.println("POST comment: " + comment);
         if (bindingResult.hasErrors()) {
             System.err.println("Comment did not validate");
             return "commentForm";
         } else {
             PostComment savedComment = session.getAttribute("comment") != null ? (PostComment) session.getAttribute("comment") : null;
             session.removeAttribute("comment");
-            savedComment.setContent(comment.getContent());
+            comment.setContent(savedComment.getContent());
+            savedComment.setTitle("FA");
             savedComment.setCreatedAt(Instant.now());
             savedComment.setPublished(true);
             savedComment.setPublishedAt(Instant.now());
             this.commentService.save(savedComment);
-            System.err.println("SAVE comment: " + savedComment); // for testing debugging purposes
+            System.err.println("SAVE comment: " + savedComment);
             sessionStatus.setComplete();
             return "redirect:/post/" + savedComment.getPost().getId();
         }

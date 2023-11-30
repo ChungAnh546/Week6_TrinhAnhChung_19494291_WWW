@@ -46,7 +46,7 @@ public class PostController {
         post.setPublishedAt(Instant.now());
         post.setUpdateAt(Instant.now());
         this.postService.insertPost(post);
-        System.err.println("SAVE post: " + post);
+
         sessionStatus.setComplete();
         return "redirect:/post/" + post.getId();
     }
