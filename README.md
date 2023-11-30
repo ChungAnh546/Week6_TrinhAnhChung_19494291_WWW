@@ -1,7 +1,7 @@
 # Week6_TrinhAnhChung_19494291_WWW
 ### Information:
-Name: Trịnh Anh Chung
-Mssv: 19494291
+-Name: Trịnh Anh Chung
+-Mssv: 19494291
 ### Description:
 Request: Develop a blog website using Spring Boot.
 
@@ -28,8 +28,8 @@ Display a list of posts
 ## Feature: Comment on posts
 >![img_8.png](img_8.png)
 ## The tools that have been used
-IDE: IntelliJ
-Framework: Spring Boot
-Web server: Tomcat
-Database server: MySQL
-Code storage: GitHub
+-IDE: IntelliJ
+-Framework: Spring Boot
+-Web server: Tomcat
+-Database server: MySQL
+-Code storage: GitHub
