@@ -10,11 +10,11 @@ Request: Develop a blog website using Spring Boot.
 ## Database
 >![img_1.png](img_1.png)
 ## Feature
-Registration, Login
-Utilize cookies, sessions
-Post, edit, delete posts
-Comment on posts, edit comments
-Display a list of posts
+- Registration, Login
+- Utilize cookies, sessions
+- Post, edit, delete posts
+- Comment on posts, edit comments
+- Display a list of posts
 ## Feature: Login
 >![img_2.png](img_2.png)
 ## Feature: Registration
